@@ -1,0 +1,41 @@
+Title Page
+
+Article Title:
+Beyond Imbalance Ratio: Data Characteristics as Critical Moderators of Oversampling Method Selection
+
+
+Author Information:
+
+Jiangyuwen*a, Ye Songyun*b
+
+Affiliations:
+a School of Artificial Intelligence, Guangzhou Institute of Science and Technology, Guangzhou 510000, China
+b School of Artificial Intelligence, Guangzhou Institute of Science and Technology, Guangzhou 510000, China
+
+* Corresponding author
+
+Contact Information:
+Corresponding Author: Ye Songyun
+Email: yesongyun@gzist.edu.cn
+Address: School of Artificial Intelligence, Guangzhou Institute of Science and Technology, Guangzhou, China
+
+Author ORCID:
+Jiangyuwen: 0009-0001-4022-1436
+Ye Songyun: 0009-0009-5048-3147
+
+Present/Permanent Address:
+Not applicable. All authors conducted the work at Guangzhou Institute of Science and Technology.
+
+Word Count:
+Abstract: ~180 words
+Manuscript: ~8500 words
+References: 46
+
+Article Type:
+Research Paper
+
+Number of Figures: 3
+Number of Tables: 5
+
+Conflicts of Interest:
+None declared.

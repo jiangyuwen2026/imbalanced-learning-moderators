@@ -112,6 +112,7 @@ Author 2 (Corresponding):
   Name: Ye Songyun
   Affiliation: School of Artificial Intelligence, Guangzhou Institute of Science and Technology, Guangzhou, China
   Email: yesongyun@gzist.edu.cn
+  ORCID: 0009-0009-5048-3147
   * Mark as Corresponding Author
 ```
 
