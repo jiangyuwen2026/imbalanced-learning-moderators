@@ -57,7 +57,7 @@
 \title{Beyond Imbalance Ratio: Data Characteristics as Critical Moderators of Oversampling Method Selection}
 
 \author{
- Jiangyuwen$^{1,*}$~~~~Ye Songyun$^{1,\dagger}$\\[0.8em]
+ Jiangyuwen$^{1,*}$ (ORCID: 0009-0001-4022-1436)~~~~Ye Songyun$^{1,\dagger}$ (ORCID: 0009-0009-5048-3147)\\[0.8em]
  \normalsize $^1$School of Artificial Intelligence, Guangzhou Institute of Science and Technology,\\
  \normalsize Guangzhou, China\\[0.3em]
  \normalsize $^*$jiangyuwen@gzist.edu.cn; $^\dagger$yesongyun@gzist.edu.cn (Corresponding Author)
@@ -94,7 +94,7 @@ Numerous methodological approaches have been developed to address this challenge
 \subsection{The Method Selection Dilemma}
 The expanding repertoire of oversampling techniques presents practitioners with a fundamental methodological dilemma: \textit{given a specific imbalanced dataset with identifiable characteristics, which oversampling method should be employed to maximize classification performance?} Surprisingly, the extant literature offers limited systematic guidance for this critical selection problem. Some studies advocate for the general applicability of SMOTE, whereas others recommend boundary-focused variants such as Borderline-SMOTE when decision boundary refinement is paramount. More recent investigations propose adaptive methods like ADASYN for handling complex, multi-modal distributions. This lack of consensus underscores the pressing need for evidence-based selection criteria.
 
-Recently, Chen et al. \cite{chen2023syMProD} proposed SyMProD (Synthetic Minority based on Probabilistic Distribution), a novel oversampling technique that generates minority class instances according to probability distributions rather than random selection. Although demonstrating competitive performance across 14 benchmark datasets, their work implicitly suggests that dataset characteristics---including imbalance ratio (IR)---may influence method effectiveness. This observation motivates a broader question: \textit{can IR alone serve as a reliable criterion for selecting among competing oversampling techniques?} Preliminary cross-dataset analyses reveal strong positive correlations between IR and the relative advantage of sophisticated methods over conventional SMOTE, suggesting that datasets with elevated IR values may warrant more complex oversampling approaches. However, such correlation-based reasoning across heterogeneous datasets potentially conflates the effect of IR with other confounding data characteristics, thereby raising concerns regarding the validity of IR as a standalone selection criterion.
+Recently, Chen et al. \cite{chen2023symprod} proposed SyMProD (Synthetic Minority based on Probabilistic Distribution), a novel oversampling technique that generates minority class instances according to probability distributions rather than random selection. Although demonstrating competitive performance across 14 benchmark datasets, their work implicitly suggests that dataset characteristics---including imbalance ratio (IR)---may influence method effectiveness. This observation motivates a broader question: \textit{can IR alone serve as a reliable criterion for selecting among competing oversampling techniques?} Preliminary cross-dataset analyses reveal strong positive correlations between IR and the relative advantage of sophisticated methods over conventional SMOTE, suggesting that datasets with elevated IR values may warrant more complex oversampling approaches. However, such correlation-based reasoning across heterogeneous datasets potentially conflates the effect of IR with other confounding data characteristics, thereby raising concerns regarding the validity of IR as a standalone selection criterion.
 
 \subsection{The Problem with IR-Only Selection}
 Although the IR-threshold paradigm offers practical convenience, it inherently conflates observational correlation with causal relationships. The limitations of IR-centric approaches have garnered increasing recognition in the literature. Emerging evidence indicates that when class overlap coexists with imbalance, performance degradation becomes pronounced---yet this insight has not been systematically translated into method selection guidelines. Specifically, datasets with high IR values inherently exhibit multiple confounding characteristics: (1) fewer minority samples available for distribution estimation, (2) potentially diminished class separability attributable to limited minority class coverage, and (3) altered cluster structures resulting from data sparsity. When researchers fail to control these confounding variables through rigorous experimental design, observed correlations between IR and method effectiveness may erroneously reflect the influence of data characteristics rather than establish a genuine causal relationship.
@@ -745,7 +745,7 @@ The visualizations (Fig.~\ref{fig:boundary_viz}) reveal that SMOTE extends the m
 We now provide theoretical interpretation of the empirical findings.
 
 \subsubsection{Why Negative Correlation?}
-From an information-theoretic perspective, as imbalance ratio increases (resulting in fewer minority samples), the empirical estimation of minority class distribution becomes increasingly unstable due to sampling variance. FSDR-SMOTE \cite{fsdr_smote2024} observed that performance degrades significantly when IR $> 8$, whereas GQEO \cite{gqeo2025} recognized that class imbalance represents one of multiple challenging factors affecting classifier performance. Synthetic samples generated from poor distributional estimates introduce estimation noise rather than information gain, thereby diminishing the relative advantage of sophisticated oversampling methods compared to simpler approaches. This mechanism explains the observed negative correlation: under high-IR conditions, the signal-to-noise ratio of synthetic sample generation deteriorates.
+From an information-theoretic perspective, as imbalance ratio increases (resulting in fewer minority samples), the empirical estimation of minority class distribution becomes increasingly unstable due to sampling variance. FSDR-SMOTE \cite{fsdr_smote2024} observed that performance degrades significantly when IR $> 8$, whereas GQEO \cite{gqeo2024} recognized that class imbalance represents one of multiple challenging factors affecting classifier performance. Synthetic samples generated from poor distributional estimates introduce estimation noise rather than information gain, thereby diminishing the relative advantage of sophisticated oversampling methods compared to simpler approaches. This mechanism explains the observed negative correlation: under high-IR conditions, the signal-to-noise ratio of synthetic sample generation deteriorates.
 
 \subsubsection{Why is Separability the Key Moderator?}
 Class separability directly indexes the information content of existing training data regarding the optimal decision boundary. Low separability indicates substantial class overlap with ambiguous boundary regions. In such contexts, additional synthetic samples from oversampling provide valuable supplementary information for boundary estimation, particularly in high-uncertainty regions. This aligns with recent advances: ClusterDEBO \cite{clusterdebo2025} demonstrates that clustering-based generation ``improves class separability and enhances classifier robustness,'' whereas GK-SMOTE \cite{gk_smote2025} generates ``well-separated synthetic samples that maintain class balance and reduce overlap.'' Conversely, high separability indicates well-separated classes where the existing data already provides sufficient boundary information, rendering synthetic samples potentially detrimental as sources of estimation noise. Our quantitative finding ($\rho=-0.72$) provides the first empirical evidence establishing separability as a statistical moderator rather than merely an optimization target.
@@ -755,12 +755,12 @@ Our supplementary visualization experiments (E2) provide intuitive evidence for 
 \subsubsection{Reconciling with Previous Work}
 Our findings do not invalidate the prevailing IR-threshold intuition but refine its theoretical interpretation. The strong cross-dataset correlation ($r=0.9662$) observed in our Stage 1 analysis reflects a genuine empirical pattern: high-IR datasets frequently possess characteristics (low separability, complex cluster structure) that render certain oversampling methods effective. However, attributing this pattern causally to IR alone constitutes a fundamental attribution error. The underlying mechanism is not that ``elevated IR causes enhanced oversampling performance,'' but rather that ``high IR covaries with data characteristics that favor specific methods.''
 
-Importantly, whereas prior work has \textit{noted} the limitations of IR-centric paradigms (e.g., GQEO \cite{gqeo2025} emphasized that class imbalance is one of several difficult factors; other studies have highlighted class overlap), we provide the first \textit{quantified moderation effects} through systematic controlled experimentation. This methodological distinction transforms anecdotal observations into actionable selection criteria: practitioners should select methods based on measured data characteristics (separability, cluster structure) rather than IR-mediated heuristics.
+Importantly, whereas prior work has \textit{noted} the limitations of IR-centric paradigms (e.g., GQEO \cite{gqeo2024} emphasized that class imbalance is one of several difficult factors; other studies have highlighted class overlap), we provide the first \textit{quantified moderation effects} through systematic controlled experimentation. This methodological distinction transforms anecdotal observations into actionable selection criteria: practitioners should select methods based on measured data characteristics (separability, cluster structure) rather than IR-mediated heuristics.
 
 \subsection{Practical Implications}
 Based on our empirical findings and theoretical analysis, we propose a data-aware method selection framework that integrates multiple data characteristics for evidence-based decision-making (Algorithm~\ref{alg:selection}). This framework represents a paradigm shift from IR-threshold heuristics toward a more nuanced, contextually informed approach.
 
-Recent work has proposed alternative selection frameworks. For instance, MDPI's comprehensive analysis \cite{mdpi2026} provides scenario-based recommendations (e.g., SMOTE for small minority classes, CTGAN for large datasets). While valuable, such frameworks rely on heuristic rules derived from observational comparisons. Our framework differs fundamentally by establishing \textit{statistical moderation relationships} derived from controlled experiments. Specifically, class separability ($\rho=-0.72$) and cluster structure emerge as quantified moderators rather than descriptive categories. This distinction enables practitioners to make evidence-based selections grounded in measured data characteristics rather than dataset size heuristics.
+Recent work has proposed alternative selection frameworks. For instance, MDPI's comprehensive analysis \cite{mdpi2025} provides scenario-based recommendations (e.g., SMOTE for small minority classes, CTGAN for large datasets). While valuable, such frameworks rely on heuristic rules derived from observational comparisons. Our framework differs fundamentally by establishing \textit{statistical moderation relationships} derived from controlled experiments. Specifically, class separability ($\rho=-0.72$) and cluster structure emerge as quantified moderators rather than descriptive categories. This distinction enables practitioners to make evidence-based selections grounded in measured data characteristics rather than dataset size heuristics.
 
 %% ---- Algorithm ----
 \begin{algorithm}[!ht]
@@ -859,9 +859,9 @@ H.~He, Y.~Bai, E.~A. Garcia, and S.~Li,
 ``ADASYN: Adaptive synthetic sampling approach for imbalanced learning,''
 \emph{IEEE International Joint Conference on Neural Networks}, pp. 1322--1328, 2008.
 
-\bibitem{chen2023syMProD}
+\bibitem{chen2023symprod}
 Y.~Chen \emph{et al.},
-``SyMProD: Synthetic minority prototype generation for imbalanced data,''
+``SyMProD: Synthetic minority based on probabilistic distribution for imbalanced data,''
 \emph{IEEE Transactions on Knowledge and Data Engineering}, 2023.
 
 \bibitem{fernandez2018smote}
@@ -939,10 +939,10 @@ C.~X. Ling and V.~S. Sheng,
 \emph{Department of Computer Science, University of Western Ontario}, 2008.
 
 % 2024-2025 Recent advances
-\bibitem{gqeo2025}
+\bibitem{gqeo2024}
 Q.~Dai, L.~Wang, J.~Zhang, W.~Ding, and L.~Chen,
 ``GQEO: Nearest neighbor graph-based generalized quadrilateral element oversampling for class-imbalance problem,''
-\emph{Neural Networks}, vol.~184, p.~107107, 2025.
+\emph{Neural Networks}, vol.~184, p.~107107, 2024.
 
 \bibitem{clusterdebo2025}
 M.~A. Karabiyik, B.~S. Yildiz, and B.~Alatas,
@@ -954,10 +954,10 @@ M.~R. Miraj, M.~A. Rahman, and A.~A. Sajib,
 ``GK-SMOTE: A hyperparameter-free noise-resilient Gaussian KDE-based oversampling approach,''
 \emph{arXiv preprint arXiv:2509.11163}, 2025.
 
-\bibitem{mdpi2026}
+\bibitem{mdpi2025}
 T.~A. Edwards, S.~K. Martinez, and J.~P. Wilson,
 ``Synthetic data augmentation for imbalanced tabular data: A comparative analysis,''
-\emph{Electronics}, vol.~15, no.~4, p.~883, 2026.
+\emph{Electronics}, vol.~15, no.~4, p.~883, 2025.
 
 \bibitem{fsdr_smote2024}
 Y.~Zhang, L.~Deng, and B.~Wei,
