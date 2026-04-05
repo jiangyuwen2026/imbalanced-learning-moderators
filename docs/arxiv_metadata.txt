@@ -1,0 +1,92 @@
+================================================================================
+arXiv 提交元数据模板
+================================================================================
+
+【基本信息】
+------------------------------------------------------------------------------
+标题 (Title):
+Beyond Imbalance Ratio: Data Characteristics as Critical Moderators of Oversampling Method Selection
+
+作者 (Authors):
+Jiangyuwen, Ye Songyun
+
+合作者机构 (Affiliation):
+School of Artificial Intelligence, Guangzhou Institute of Science and Technology, Guangzhou, China
+
+通讯作者邮箱:
+yesongyun@gzist.edu.cn
+
+================================================================================
+【摘要 (Abstract)】
+------------------------------------------------------------------------------
+Background: The prevailing IR-threshold paradigm posits a positive correlation between imbalance ratio (IR) and oversampling effectiveness, yet this assumption remains empirically unsubstantiated through controlled experimentation. 
+
+Methods: We conducted 12 controlled experiments (N>100 dataset variants) that systematically manipulated IR while holding data characteristics (class separability, cluster structure) constant via algorithmic generation of Gaussian mixture datasets. Two additional validation experiments examined ceiling effects and metric-dependence. All methods were evaluated on 17 real-world datasets from OpenML.
+
+Results: Upon controlling for confounding variables, IR exhibited a weak to moderate negative correlation with oversampling benefits (ranging from r=-0.15 for AUC-ROC to r=-0.86 for Recall, mean r=-0.47 across metrics). Class separability emerged as a substantially stronger moderator (ρ=-0.72, p=0.003), accounting for significantly more variance in method effectiveness than IR alone.
+
+Conclusion: Method selection should be guided by data characteristics rather than IR in isolation. We propose a "Context Matters" framework that integrates IR, class separability, and cluster structure to provide evidence-based selection criteria for practitioners.
+
+================================================================================
+【类别 (Categories)】
+------------------------------------------------------------------------------
+主类别 (Primary): cs.LG (Machine Learning)
+
+次类别 (Secondary):
+- cs.AI (Artificial Intelligence)
+- stat.ML (Machine Learning, Statistics)
+
+================================================================================
+【评论/备注 (Comments)】
+------------------------------------------------------------------------------
+Submitted to Pattern Recognition. 28 pages, 5 figures, 8 tables. 12 controlled experiments with N>100 dataset variants, 17 real-world datasets from OpenML, 192 synthetic configurations.
+
+================================================================================
+【报告号 (Report Number)】
+------------------------------------------------------------------------------
+(可选，如有机构报告号可填写)
+
+================================================================================
+【许可协议 (License)】
+------------------------------------------------------------------------------
+推荐选择: CC BY 4.0 (创作共用署名许可)
+
+或: arXiv.org perpetual, non-exclusive license (默认)
+
+================================================================================
+【提交文件】
+------------------------------------------------------------------------------
+主文件: main.tex (LaTeX源文件)
+图片文件:
+  - figure3_moderation_effects.png
+  - fig_combined_validation.png
+  - supplementary_E2_sampling_distribution.png
+  - figure3_moderation_effects.pdf (备用)
+  - fig_combined_validation.pdf (备用)
+  - supplementary_E2_sampling_distribution.pdf (备用)
+
+压缩包: arxiv_submission.tar.gz (2.4 MB)
+
+================================================================================
+【上传步骤】
+------------------------------------------------------------------------------
+1. 访问 https://arxiv.org/submit
+2. 登录arXiv账号
+3. 选择类别: cs.LG (Machine Learning)
+4. 填写标题、作者、摘要
+5. 上传文件: arxiv_submission.tar.gz
+6. 选择许可协议: CC BY 4.0
+7. 预览PDF并确认
+8. 提交
+
+================================================================================
+【预计发布时间】
+------------------------------------------------------------------------------
+通常 24-48 小时内发布
+
+================================================================================
+【GitHub仓库】
+------------------------------------------------------------------------------
+代码和数据: https://github.com/jiangyuwen2026/imbalanced-learning-moderators
+
+================================================================================
