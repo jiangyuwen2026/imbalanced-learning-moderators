@@ -1,0 +1,24 @@
+Declaration of Competing Interests
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+
+Author Contributions (CRediT)
+
+Jiangyuwen: Conceptualization, Methodology, Software, Formal analysis, Investigation, Writing – original draft
+Ye Songyun: Conceptualization, Supervision, Writing – review & editing, Project administration, Funding acquisition
+
+
+Funding
+
+This research was supported by the Guangzhou Institute of Science and Technology.
+
+
+Data Availability Statement
+
+The real-world datasets used in this study are publicly available from OpenML repository (https://www.openml.org/). The synthetic datasets were generated using Gaussian mixture models as described in Section 4.2. All experimental code and supplementary materials are available from the corresponding author upon reasonable request.
+
+
+Declaration of Generative AI Use
+
+During the preparation of this work, the authors used Grammarly for grammar checking and language refinement. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article.

@@ -1,0 +1,5 @@
+• Controlled experiments challenge IR-threshold paradigm with negative correlation
+• Class separability identified as strongest moderator of oversampling effectiveness
+• Context Matters framework provides data-aware method selection criteria
+• 192 synthetic and 18 real datasets validate the theoretical hypotheses
+• Statistical moderation analysis reveals ρ=-0.72 for separability-IR relationship

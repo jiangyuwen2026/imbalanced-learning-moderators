@@ -1,0 +1,65 @@
+Cover Letter for Pattern Recognition
+
+Dear Editor-in-Chief and Reviewers,
+
+We are pleased to submit our manuscript entitled "Beyond Imbalance Ratio: Data Characteristics as Critical Moderators of Oversampling Method Selection" for consideration as a Research Paper in Pattern Recognition.
+
+The prevailing IR-threshold paradigm suggests that datasets with higher imbalance ratios inherently warrant more sophisticated oversampling techniques. However, this assumption lacks rigorous causal validation. Our study challenges this paradigm through rigorous experimental methodology encompassing 12 controlled experiments (N>100 dataset variants) using 192 synthetic configurations and 18 real-world datasets from OpenML.
+
+Our key findings include:
+• Contrary to prevailing assumptions, imbalance ratio exhibits a statistically significant negative correlation (r=-0.68, p<0.001) with oversampling benefits when confounding data characteristics are controlled
+• Class separability emerges as the strongest moderator (ρ=-0.72, p=0.003), substantially outweighing IR's influence
+• We propose a "Context Matters" framework that provides evidence-based method selection criteria
+
+This work is particularly relevant to Pattern Recognition for several reasons:
+
+1. Theoretical Contribution to Pattern Recognition: Class separability is a fundamental concept in pattern recognition. Our work establishes separability as a statistical moderator of method effectiveness, contributing to the theoretical understanding of data complexity in classification problems.
+
+2. Methodological Innovation: We adopt controlled experimental design—widely recognized in statistical learning research—to isolate causal effects in imbalanced classification. This methodological rigor addresses limitations of observational studies prevalent in the field.
+
+3. Connection to Pattern Recognition Literature: Our work builds upon foundational pattern recognition research on data complexity (Ho & Basu, 2002) and extends recent advances in imbalanced classification specifically published in Pattern Recognition (Koziarski, 2020; Zhang et al., 2019).
+
+4. Practical Impact: The proposed framework enables practitioners to make evidence-based method selections grounded in measurable data characteristics rather than heuristics, directly supporting pattern classification applications in computer vision, medical diagnosis, and intelligent systems.
+
+Our manuscript contains approximately 8,500 words, 46 references (including 6 papers from Pattern Recognition), 3 figures, and 5 tables. All authors have approved the manuscript and agree with its submission. We have no conflicts of interest to disclose.
+
+We would like to suggest the following experts as potential reviewers:
+
+1. Dr. Bartosz Krawczyk, New Jersey Institute of Technology, USA (bartosz.krawczyk@njit.edu)
+   - Expertise: Imbalanced learning, pattern classification
+   - Relevant publications: Pattern Recognition, IEEE TNNLS
+
+2. Dr. Mikel Galar, Universidad Publica de Navarra, Spain
+   - Expertise: Ensemble methods, imbalanced classification
+   - Relevant publications: Pattern Recognition, Information Fusion
+
+3. Dr. Alberto Fernandez, University of Granada, Spain
+   - Expertise: Fuzzy systems, imbalanced learning, SMOTE review
+   - Relevant publications: SMOTE review (2018), IEEE TNNLS
+
+4. Dr. Michał Koziarski, Wroclaw University of Science and Technology, Poland
+   - Expertise: Radial-based sampling, imbalanced data classification
+   - Relevant publications: Pattern Recognition (2020, 2021)
+
+5. Dr. Nitesh V. Chawla, University of Notre Dame, USA
+   - Expertise: SMOTE, imbalanced learning, data mining
+   - Relevant publications: SMOTE (2002), founding contributions to field
+
+We thank you for considering our submission and look forward to your response.
+
+Sincerely,
+
+Ye Songyun, Ph.D.
+Corresponding Author
+School of Artificial Intelligence
+Guangzhou Institute of Science and Technology
+Guangzhou, China
+Email: yesongyun@gzist.edu.cn
+
+---
+
+Declaration:
+• This manuscript is original and has not been published previously
+• It is not under consideration elsewhere
+• All authors have approved the submission
+• We have no conflicts of interest
